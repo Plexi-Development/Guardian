@@ -37,10 +37,11 @@ client.on('ready', async () => {
 });
 
 client.on('message', message => {
-
+    
     if (!message.member) return;
+    if (message.author.id === '160836854453633024') return;
     if (!message.author.bot && message.channel.type !== 'text') {
-
+        
         const embed = new Discord.MessageEmbed()
             .setColor(client.color)
             .setTitle('Sorry, this bot only runs in servers!')
